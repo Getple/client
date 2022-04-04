@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import Modal from './modal';
+import Modal from './searchModal';
+import Color from '../../constant/palette';
 
 const Search = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -59,7 +60,7 @@ const Search = () => {
 export default Search;
 const Container = styled.div`
   display: flex;
-  border: 1px solid gray;
+  border: 1px solid ${Color.LIGHTGRAY};
   border-radius: 48px;
   justify-content: space-between;
   padding: 1rem 1.5rem;
@@ -73,14 +74,18 @@ const Container = styled.div`
 
 const Item = styled.div`
   padding-left: 1.2rem;
+  width: 100%;
   cursor: pointer;
+
   p {
     margin-bottom: 2px;
     font-weight: bold;
   }
+  span {
+    color: ${Color.GRAY};
+  }
   &:nth-of-type(2),
   &:nth-of-type(3) {
-    border-left: 1px gray solid;
+    border-left: 1px solid ${Color.LIGHTGRAY};
   }
-  width: 100%;
 `;
