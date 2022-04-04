@@ -2,30 +2,57 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import CalendarModal from './calendar';
+import Modal from './searchModal';
+import Color from '../../constant/palette';
 
 const Search = () => {
-  const [isCalendar, setIsCalendar] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalType, setModalType] = useState<string | undefined>(undefined);
   const [date, setDate] = useState<Date | undefined>(undefined);
+  const [sports, setSports] = useState<string | undefined>(undefined);
 
+  const handleModal = (selectedFilter: string) => {
+    setIsModalOpen(!isModalOpen);
+    setModalType(selectedFilter);
+  };
   return (
     <>
       <Container>
-        <Item onClick={() => setIsCalendar(!isCalendar)}>
+        <Item onClick={() => handleModal('calendar')}>
           <p>날짜</p>
           <span>언제?</span>
+          {isModalOpen && modalType === 'calendar' && (
+            <Modal
+              modalType={modalType}
+              setDate={setDate}
+              setSports={setSports}
+            />
+          )}
         </Item>
-        <Item>
+        <Item onClick={() => handleModal('sports')}>
           <p>종목</p>
           <span>어떤 운동을 하시나요?</span>
+          {isModalOpen && modalType === 'sports' && (
+            <Modal
+              modalType={modalType}
+              setDate={setDate}
+              setSports={setSports}
+            />
+          )}
         </Item>
-        <Item>
+        <Item onClick={() => handleModal('number')}>
           <p>인원</p>
           <span>몇명이신가요?</span>
+          {isModalOpen && modalType === 'number' && (
+            <Modal
+              modalType={modalType}
+              setDate={setDate}
+              setSports={setSports}
+            />
+          )}
         </Item>
         <FontAwesomeIcon icon={faMagnifyingGlass} />
       </Container>
-      {isCalendar && <CalendarModal setDate={setDate} />}
     </>
   );
 };
@@ -33,7 +60,7 @@ const Search = () => {
 export default Search;
 const Container = styled.div`
   display: flex;
-  border: 1px solid gray;
+  border: 1px solid ${Color.LIGHTGRAY};
   border-radius: 48px;
   justify-content: space-between;
   padding: 1rem 1.5rem;
@@ -47,14 +74,18 @@ const Container = styled.div`
 
 const Item = styled.div`
   padding-left: 1.2rem;
+  width: 100%;
   cursor: pointer;
+
   p {
     margin-bottom: 2px;
     font-weight: bold;
   }
+  span {
+    color: ${Color.GRAY};
+  }
   &:nth-of-type(2),
   &:nth-of-type(3) {
-    border-left: 1px gray solid;
+    border-left: 1px solid ${Color.LIGHTGRAY};
   }
-  width: 100%;
 `;

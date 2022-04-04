@@ -27,6 +27,7 @@ const Wrapper = styled.div`
     border: none;
     border-radius: 8px;
     box-shadow: 0 0 6px 0 ${Color.GRAY};
+    /* width: 12.5rem; */
   }
   .react-calendar__tile {
     color: ${Color.GRAY};
