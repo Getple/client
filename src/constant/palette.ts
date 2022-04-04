@@ -5,5 +5,6 @@ export default class Color {
     static WHITE = '#FFFFFF';
     static HOVER = '#F2F2F2';
     static RED = '#ff0000';
-
+    static YELLOW='#FAE300'
+    static BROWN='#371D1E'
 }

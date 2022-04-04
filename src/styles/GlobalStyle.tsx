@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Noto Sans KR", "Noto Sans CJK KR", sans-serif;
     }
 
+    button{
+        cursor: pointer;
+    }
+
     @font-face {
         font-family: 'Noto Sans CJK KR';
         font-style: normal;
