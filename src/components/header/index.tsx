@@ -5,10 +5,10 @@ import {
   FlexContainer,
   HeaderContainer,
   LoginButton,
-  Logo,
   KakaoButton,
   CommentIcon,
 } from './headerStyle';
+import Logo from '../logo';
 
 const Header = () => {
   const [isShow, setIsShow] = useState(false);
@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <FlexContainer>
-        <Logo>GETPLE</Logo>
+        <Logo type="header" />
         <LoginButton onClick={handleModal}>로그인</LoginButton>
       </FlexContainer>
       {isShow && (

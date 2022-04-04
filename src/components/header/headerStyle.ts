@@ -16,10 +16,6 @@ export const FlexContainer = styled.div`
   padding: 0 40px;
 `;
 
-export const Logo = styled.div`
-  ${Font.LOGO}
-`;
-
 export const LoginButton = styled.button`
   width: 100px;
   height: 38px;
