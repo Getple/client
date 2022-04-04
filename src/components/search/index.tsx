@@ -11,9 +11,7 @@ const Search = () => {
   const [sports, setSports] = useState<String | undefined>(undefined);
 
   const handleModal = (selectedFilter: string) => {
-    if (!selectedFilter) {
-      setIsModalOpen(!isModalOpen);
-    }
+    setIsModalOpen(!isModalOpen);
     setModalType(selectedFilter);
   };
   return (
@@ -22,20 +20,38 @@ const Search = () => {
         <Item onClick={() => handleModal('calendar')}>
           <p>날짜</p>
           <span>언제?</span>
+          {isModalOpen && modalType === 'calendar' && (
+            <Modal
+              modalType={modalType}
+              setDate={setDate}
+              setSports={setSports}
+            />
+          )}
         </Item>
         <Item onClick={() => handleModal('sports')}>
           <p>종목</p>
           <span>어떤 운동을 하시나요?</span>
+          {isModalOpen && modalType === 'sports' && (
+            <Modal
+              modalType={modalType}
+              setDate={setDate}
+              setSports={setSports}
+            />
+          )}
         </Item>
         <Item onClick={() => handleModal('number')}>
           <p>인원</p>
           <span>몇명이신가요?</span>
+          {isModalOpen && modalType === 'number' && (
+            <Modal
+              modalType={modalType}
+              setDate={setDate}
+              setSports={setSports}
+            />
+          )}
         </Item>
         <FontAwesomeIcon icon={faMagnifyingGlass} />
       </Container>
-      {isModalOpen && (
-        <Modal modalType={modalType} setDate={setDate} setSports={setSports} />
-      )}
     </>
   );
 };
