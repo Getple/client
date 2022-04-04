@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Color from '../../constant/palette';
 
 type SportsTypeParams = {
-  setSports: React.Dispatch<React.SetStateAction<String | undefined>>;
+  setSports: React.Dispatch<React.SetStateAction<string | undefined>>;
 };
 
 const SportsType = ({ setSports }: SportsTypeParams) => {
@@ -30,7 +30,7 @@ const SportsType = ({ setSports }: SportsTypeParams) => {
 const SportsList = styled.ul`
   border: none;
   border-radius: 8px;
-  box-shadow: 0 0 6px 0 ${Color.GRAY};
+  box-shadow: 0 0 6px 0 ${Color.LIGHTGRAY};
   padding: 0.25rem 0;
   width: 12.5rem;
   background-color: ${Color.WHITE};

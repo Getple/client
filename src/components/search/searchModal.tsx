@@ -1,16 +1,16 @@
 import React from 'react';
 import CalendarModal from './calendar';
 import SportsType from './sportsType';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 type ModalParams = {
-  modalType: String | undefined;
+  modalType: string | undefined;
   setDate: React.Dispatch<React.SetStateAction<Date | undefined>>;
-  setSports: React.Dispatch<React.SetStateAction<String | undefined>>;
+  setSports: React.Dispatch<React.SetStateAction<string | undefined>>;
 };
 
 interface ModalProps {
-  modalType: String | undefined;
+  modalType: string | undefined;
 }
 
 const Modal = ({ modalType, setDate, setSports }: ModalParams) => {

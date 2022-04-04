@@ -7,9 +7,9 @@ import Color from '../../constant/palette';
 
 const Search = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalType, setModalType] = useState<String | undefined>(undefined);
+  const [modalType, setModalType] = useState<string | undefined>(undefined);
   const [date, setDate] = useState<Date | undefined>(undefined);
-  const [sports, setSports] = useState<String | undefined>(undefined);
+  const [sports, setSports] = useState<string | undefined>(undefined);
 
   const handleModal = (selectedFilter: string) => {
     setIsModalOpen(!isModalOpen);
