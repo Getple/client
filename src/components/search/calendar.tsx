@@ -3,7 +3,6 @@ import Calendar from 'react-calendar';
 import styled from 'styled-components';
 import 'react-calendar/dist/Calendar.css';
 import Color from '../../constant/palette';
-import PropTypes from 'prop-types';
 
 type CalendarModarParams = {
   setDate: React.Dispatch<React.SetStateAction<Date | undefined>>;
@@ -22,9 +21,6 @@ const CalendarModal = ({ setDate }: CalendarModarParams) => {
 };
 
 export default CalendarModal;
-CalendarModal.propsTypes = {
-  setDate: PropTypes.func,
-};
 
 const Wrapper = styled.div`
   .react-calendar {
