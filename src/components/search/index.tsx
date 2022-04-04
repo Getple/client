@@ -2,34 +2,40 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import CalendarModal from './calendar';
-import SportsType from './sportsType';
+import Modal from './modal';
 
 const Search = () => {
-  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
-  const [isSportsOpen, setIsSportsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalType, setModalType] = useState<String | undefined>(undefined);
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [sports, setSports] = useState<String | undefined>(undefined);
 
+  const handleModal = (selectedFilter: string) => {
+    if (!selectedFilter) {
+      setIsModalOpen(!isModalOpen);
+    }
+    setModalType(selectedFilter);
+  };
   return (
     <>
       <Container>
-        <Item onClick={() => setIsCalendarOpen(!isCalendarOpen)}>
+        <Item onClick={() => handleModal('calendar')}>
           <p>날짜</p>
           <span>언제?</span>
         </Item>
-        <Item onClick={() => setIsSportsOpen(!isSportsOpen)}>
+        <Item onClick={() => handleModal('sports')}>
           <p>종목</p>
           <span>어떤 운동을 하시나요?</span>
         </Item>
-        <Item>
+        <Item onClick={() => handleModal('number')}>
           <p>인원</p>
           <span>몇명이신가요?</span>
         </Item>
         <FontAwesomeIcon icon={faMagnifyingGlass} />
       </Container>
-      {isCalendarOpen && <CalendarModal setDate={setDate} />}
-      {isSportsOpen && <SportsType setSports={setSports} />}
+      {isModalOpen && (
+        <Modal modalType={modalType} setDate={setDate} setSports={setSports} />
+      )}
     </>
   );
 };
