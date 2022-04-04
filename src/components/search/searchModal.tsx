@@ -8,13 +8,21 @@ type ModalParams = {
   modalType: string | undefined;
   setDate: React.Dispatch<React.SetStateAction<Date | undefined>>;
   setSports: React.Dispatch<React.SetStateAction<string | undefined>>;
+  count: number;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
 };
 
 interface ModalProps {
   modalType: string | undefined;
 }
 
-const Modal = ({ modalType, setDate, setSports }: ModalParams) => {
+const Modal = ({
+  modalType,
+  setDate,
+  setSports,
+  count,
+  setCount,
+}: ModalParams) => {
   return (
     <Container modalType={modalType}>
       {modalType === 'calendar' && (
@@ -29,7 +37,7 @@ const Modal = ({ modalType, setDate, setSports }: ModalParams) => {
       )}
       {modalType === 'number' && (
         <div className="modal">
-          <CountModal />
+          <CountModal count={count} setCount={setCount} />
         </div>
       )}
     </Container>
