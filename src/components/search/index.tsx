@@ -3,19 +3,22 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import CalendarModal from './calendar';
+import SportsType from './sportsType';
 
 const Search = () => {
-  const [isCalendar, setIsCalendar] = useState(false);
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const [isSportsOpen, setIsSportsOpen] = useState(false);
   const [date, setDate] = useState<Date | undefined>(undefined);
+  const [sports, setSports] = useState<String | undefined>(undefined);
 
   return (
     <>
       <Container>
-        <Item onClick={() => setIsCalendar(!isCalendar)}>
+        <Item onClick={() => setIsCalendarOpen(!isCalendarOpen)}>
           <p>날짜</p>
           <span>언제?</span>
         </Item>
-        <Item>
+        <Item onClick={() => setIsSportsOpen(!isSportsOpen)}>
           <p>종목</p>
           <span>어떤 운동을 하시나요?</span>
         </Item>
@@ -25,7 +28,8 @@ const Search = () => {
         </Item>
         <FontAwesomeIcon icon={faMagnifyingGlass} />
       </Container>
-      {isCalendar && <CalendarModal setDate={setDate} />}
+      {isCalendarOpen && <CalendarModal setDate={setDate} />}
+      {isSportsOpen && <SportsType setSports={setSports} />}
     </>
   );
 };
