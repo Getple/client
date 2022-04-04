@@ -11,9 +11,10 @@ const Search = () => {
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [sports, setSports] = useState<string | undefined>(undefined);
 
-  const handleModal = (selectedFilter: string) => {
+  type FilterType = 'calendar' | 'sports' | 'number';
+  const handleModal = (filter: FilterType) => {
     setIsModalOpen(!isModalOpen);
-    setModalType(selectedFilter);
+    setModalType(filter);
   };
   return (
     <>

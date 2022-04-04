@@ -1,7 +1,8 @@
 import React from 'react';
 import CalendarModal from './calendar';
-import SportsType from './sportsType';
+import SportsModal from './sportsModal';
 import styled from 'styled-components';
+import CountModal from './count';
 
 type ModalParams = {
   modalType: string | undefined;
@@ -23,7 +24,12 @@ const Modal = ({ modalType, setDate, setSports }: ModalParams) => {
       )}
       {modalType === 'sports' && (
         <div className="modal">
-          <SportsType setSports={setSports} />
+          <SportsModal setSports={setSports} />
+        </div>
+      )}
+      {modalType === 'number' && (
+        <div className="modal">
+          <CountModal />
         </div>
       )}
     </Container>
