@@ -1,4 +1,5 @@
 export default class Font {
+    static LOGO = {'font-size': '30px', 'font-weight': '700', 'font-style': 'italic'};
     static HEAD_1 = { 'font-size': '26px', 'font-weight': '600' };
     static HEAD_2 = { 'font-size': '20px', 'font-weight': '600' };
     static HEAD_3 = { 'font-size': '12px', 'font-weight': '600' };
