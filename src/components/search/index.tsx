@@ -4,10 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Modal from './searchModal';
 import Color from '../../constant/palette';
-<<<<<<< HEAD
-=======
-import BODY_3 from '../../constant/fontStyle';
->>>>>>> 8501259... feat/17-Add countModal component
 import Font from '../../constant/fontStyle';
 
 const Search = () => {
@@ -16,10 +12,7 @@ const Search = () => {
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [sports, setSports] = useState<string | undefined>(undefined);
   const [count, setCount] = useState(1);
-<<<<<<< HEAD
   const modalRef = useRef<HTMLDivElement>(null);
-=======
->>>>>>> 8501259... feat/17-Add countModal component
 
   type FilterType = 'calendar' | 'sports' | 'number';
 
