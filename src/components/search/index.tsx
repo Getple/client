@@ -28,7 +28,7 @@ const Search = () => {
   };
 
   const onSearch = () => {
-    //검색결과 데이터 가져오는 로직
+    //리스트 페이지로 연결
   };
 
   return (
@@ -36,7 +36,7 @@ const Search = () => {
       <Container>
         <Item onClick={(e) => handleModal(e, 'calendar')}>
           <p>날짜</p>
-          <span>언제?</span>
+          <span> {date ? date.toLocaleDateString() : '언제?'}</span>
           {isModalOpen && modalType === 'calendar' && (
             <div ref={modalRef}>
               <Modal
@@ -51,7 +51,7 @@ const Search = () => {
         </Item>
         <Item onClick={(e) => handleModal(e, 'sports')}>
           <p>종목</p>
-          <span>어떤 운동을 하시나요?</span>
+          <span>{sports ? sports : '어떤 운동을 하시나요?'}</span>
           {isModalOpen && modalType === 'sports' && (
             <div ref={modalRef}>
               <Modal
@@ -66,7 +66,7 @@ const Search = () => {
         </Item>
         <Item onClick={(e) => handleModal(e, 'number')}>
           <p>인원</p>
-          <span>몇명이신가요?</span>
+          <span>{count ? `${count}명` : '몇명이신가요?'}</span>
           {isModalOpen && modalType === 'number' && (
             <div ref={modalRef}>
               <Modal
