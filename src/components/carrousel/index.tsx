@@ -81,7 +81,6 @@ const Carrousel = (props: CarrouselParams) => {
       const elem = document.getElementById(`dot_${i}`);
       if (i === idx && elem) {
         initialNum = i * -900;
-        console.log('test', initialNum);
         elem.style.backgroundColor = `${Color.GRAY}`;
         if (cardListRef.current) {
           cardListRef.current.style.transform = `translateX(${initialNum}px)`;
