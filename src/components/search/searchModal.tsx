@@ -3,6 +3,7 @@ import CalendarModal from './calendar';
 import SportsModal from './sportsModal';
 import styled from 'styled-components';
 import CountModal from './count';
+import Font from '../../constant/fontStyle';
 
 type ModalParams = {
   modalType: string | undefined;
@@ -49,6 +50,7 @@ export default Modal;
 const Container = styled.div<ModalProps>`
   position: relative;
   z-index: 10;
+  ${Font.BODY_2};
   .modal {
     margin-top: 1.2rem;
     position: absolute;
