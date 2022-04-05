@@ -44,7 +44,7 @@ const CardListWrapper = styled.div`
 
 const CardListContainer = styled.div`
   display: flex;
-  width: ${(props: { width: number }) => props.width};
+  width: ${(props: { width: number }) => props.width}px;
   height: 440px;
 `;
 
