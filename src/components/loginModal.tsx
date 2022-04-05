@@ -40,6 +40,7 @@ const Background = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 100;
 `;
 
 const ModalWrapper = styled.div`
@@ -48,7 +49,7 @@ const ModalWrapper = styled.div`
   padding: 30px;
   background-color: white;
   position: relative;
-  z-index: 10;
+  z-index: 120;
   border-radius: 8px;
   text-align: center;
 `;
