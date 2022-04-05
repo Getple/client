@@ -13,9 +13,17 @@ const CalendarModal = ({ setDate }: CalendarModarParams) => {
     setDate(e);
   };
 
+  const formatDate = (date: Date) => {
+    const formatedDate = date.getDate().toLocaleString();
+    return formatedDate;
+  };
+
   return (
     <Wrapper>
-      <Calendar onChange={onChange} />
+      <Calendar
+        onChange={onChange}
+        formatDay={(locale, date) => formatDate(date)}
+      />
     </Wrapper>
   );
 };
@@ -27,10 +35,12 @@ const Wrapper = styled.div`
     border: none;
     border-radius: 8px;
     box-shadow: 0 0 6px 0 ${Color.GRAY};
+    width: 15.6rem;
   }
+
   .react-calendar__tile {
     color: ${Color.GRAY};
-    padding: 15px 10px;
+
     border-radius: 50%;
   }
 
