@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { addDataAtBothEnds, dotMarking, handleDot } from './utils';
+import { addDataAtBothEnds, dotMarking } from './utils';
 import { FacilityInfo } from './type';
 import Color from '../../constant/palette';
 import CarrouselDirection from './carrouselDirection';
@@ -76,6 +76,23 @@ const Carrousel = (props: CarrouselParams) => {
     }
   };
 
+  const handleDot = (idx: number) => {
+    for (let i = 1; i <= props.array.length; i++) {
+      const elem = document.getElementById(`dot_${i}`);
+      if (i === idx && elem) {
+        initialNum = i * -900;
+        console.log('test', initialNum);
+        elem.style.backgroundColor = `${Color.GRAY}`;
+        if (cardListRef.current) {
+          cardListRef.current.style.transform = `translateX(${initialNum}px)`;
+          cardListRef.current.style.transitionDuration = '500ms';
+        }
+      } else if (i !== idx && elem) {
+        elem.style.backgroundColor = `${Color.LIGHTGRAY}`;
+      }
+    }
+  };
+
   return (
     <Wrapper>
       <Container>
@@ -102,9 +119,7 @@ const Carrousel = (props: CarrouselParams) => {
           <CarrouselDot
             key={el.id}
             id={`dot_${idx + 1}`}
-            onClick={() =>
-              handleDot(idx + 1, initialNum, props.array, cardListRef)
-            }
+            onClick={() => handleDot(idx + 1)}
           />
         ))}
       </CarrouselDotList>
