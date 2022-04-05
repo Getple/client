@@ -6,7 +6,7 @@ type SportsTypeParams = {
   setSports: React.Dispatch<React.SetStateAction<string | undefined>>;
 };
 
-const SportsType = ({ setSports }: SportsTypeParams) => {
+const SportsModal = ({ setSports }: SportsTypeParams) => {
   const sportsTypes = [
     '축구',
     '풋살',
@@ -43,4 +43,4 @@ const SportsList = styled.ul`
     background-color: ${Color.HOVER};
   }
 `;
-export default SportsType;
+export default SportsModal;
