@@ -87,7 +87,7 @@ const Search = () => {
 
 export default Search;
 const Container = styled.div`
-  width: 900px;
+  width: 80%;
   margin: 8.5rem auto;
   display: flex;
   border: 1px solid ${Color.LIGHTGRAY};

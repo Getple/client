@@ -31,7 +31,7 @@ const CountModal = ({ count, setCount }: CounterModalParams) => {
 
 export default CountModal;
 const Container = styled.div`
-  width: 12.5rem;
+  width: 15.6rem;
   border: none;
   border-radius: 8px;
   box-shadow: 0 0 6px 0 ${Color.LIGHTGRAY};
