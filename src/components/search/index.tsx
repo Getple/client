@@ -87,7 +87,7 @@ const Search = () => {
 
 export default Search;
 const Container = styled.div`
-  width: 900px;
+  width: 80%;
   margin: 8.5rem auto;
   display: flex;
   border: 1px solid ${Color.LIGHTGRAY};
@@ -108,9 +108,10 @@ const Item = styled.div`
   cursor: pointer;
 
   p {
-    margin-bottom: 4px;
-    ${Font.SUBTITLE_3}
-    font-weight: bold;
+
+    margin-bottom: 6px;
+    ${Font.HEAD_3}
+
   }
   span {
     color: ${Color.GRAY};
