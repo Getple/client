@@ -35,10 +35,15 @@ const Header = () => {
           handleModal={handleModal}
           title="로그인"
         >
-          <KakaoButton>
-            <CommentIcon icon={faComment} />
-            <span>카카오 로그인</span>
-          </KakaoButton>
+          <a
+            href={`https://kauth.kakao.com/oauth/authorize?client_id=${process.env.REACT_APP_REST_API_KEY}&redirect_uri=${process.env.REACT_APP_KAKAO_CALLBACK}&response_type=code`}
+          >
+            <KakaoButton>
+              <CommentIcon icon={faComment} />
+              <span>카카오 로그인</span>
+            </KakaoButton>
+          </a>
+
           {/* <AccountButton>
                 <CommentIcon icon={faUser} />
                 <span>사용자 계정</span>
