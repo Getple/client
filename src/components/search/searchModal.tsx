@@ -48,8 +48,9 @@ export default Modal;
 
 const Container = styled.div<ModalProps>`
   position: relative;
+  z-index: 10;
   .modal {
-    margin-top: 1.5rem;
+    margin-top: 1.2rem;
     position: absolute;
   }
 `;
