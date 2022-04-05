@@ -108,9 +108,8 @@ const Item = styled.div`
   cursor: pointer;
 
   p {
-    margin-bottom: 4px;
-    ${Font.SUBTITLE_3}
-    font-weight: bold;
+    margin-bottom: 6px;
+    ${Font.HEAD_3}
   }
   span {
     color: ${Color.GRAY};
