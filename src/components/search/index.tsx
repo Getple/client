@@ -95,7 +95,6 @@ const Container = styled.div`
   justify-content: space-between;
   padding: 1rem 1.5rem;
   align-items: center;
-  font-size: ${Font.BODY_3};
 
   svg {
     font-size: 24px;
@@ -110,10 +109,12 @@ const Item = styled.div`
 
   p {
     margin-bottom: 4px;
-    font-size: ${Font.HEAD_3};
+    ${Font.SUBTITLE_3}
+    font-weight: bold;
   }
   span {
     color: ${Color.GRAY};
+    ${Font.BODY_1}
   }
   &:nth-of-type(2),
   &:nth-of-type(3) {
