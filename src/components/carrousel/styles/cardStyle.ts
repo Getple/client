@@ -7,6 +7,7 @@ const CardContainer = styled.div`
   background-image: url(${(props: { image: string }) => props.image});
   background-position: center center;
   background-size: cover;
+  border-radius: 8px;
 `;
 
 const Info = styled.div`
