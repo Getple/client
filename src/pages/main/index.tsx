@@ -14,9 +14,10 @@ const Main = (): JSX.Element => {
 
 const Container = styled.div`
   max-width: 1120px;
-  height: calc(100vh - 300px - 64px);
+  height: 100vh;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
 `;
+
 export default Main;
