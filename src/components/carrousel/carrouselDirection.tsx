@@ -36,4 +36,7 @@ const Icon = styled(FontAwesomeIcon)`
   font-size: 30px;
   cursor: pointer;
   margin-bottom: 1.5rem;
+  @media screen and (min-width: 0px) and (max-width: 425px) {
+    display: none;
+  }
 `;
