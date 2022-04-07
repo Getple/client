@@ -1,21 +1,22 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 import Font from '../../constant/fontStyle';
 import Color from '../../constant/palette';
 interface tagProps extends React.HTMLAttributes<HTMLDivElement> {
   label: string;
   color: string;
+  marginRight?: string;
 }
 
-const Tag = ({ label, color, ...rest }: tagProps) => {
+const Tag = ({ label, color, marginRight = 'none', ...rest }: tagProps) => {
   return (
-    <Wrapper color={color} {...rest}>
+    <Wrapper color={color} wrapperMargin={marginRight} {...rest}>
       <span>{label}</span>
     </Wrapper>
   );
 };
 
 export default Tag;
+
 const Wrapper = styled.div`
   ${Font.BODY_2};
   ${({ color }) => {
@@ -44,4 +45,6 @@ const Wrapper = styled.div`
   span {
     vertical-align: middle;
   }
+  margin-right: ${({ wrapperMargin }: { wrapperMargin: string }) =>
+    wrapperMargin};
 `;

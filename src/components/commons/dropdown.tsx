@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import Font from '../../constant/fontStyle';
 import Color from '../../constant/palette';
 
-type DropdownProps = {
+interface DropdownProps {
   menuList: string[];
   setSeletctedMenu: React.Dispatch<React.SetStateAction<string>>;
-};
+}
 const Dropdown = ({ menuList, setSeletctedMenu }: DropdownProps) => {
   return (
     <Container>
