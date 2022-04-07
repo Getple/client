@@ -1,15 +1,16 @@
 import styled from 'styled-components';
+import Font from '../../constant/fontStyle';
 import Color from '../../constant/palette';
 
 export const FooterContainer = styled.footer`
   width: 100%;
-  height: 300px;
+  height: 18.75rem;
   color: ${Color.WHITE};
   background-color: ${Color.DARKGRAY};
 `;
 
 export const FooterItem = styled.div`
-  max-width: 1120px;
+  max-width: 70rem;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -20,7 +21,7 @@ export const FooterItem = styled.div`
 export const TopContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px;
+  padding: 1.25rem 2.5rem;
 `;
 
 export const TopItemsColumn = styled.div`
@@ -29,9 +30,8 @@ export const TopItemsColumn = styled.div`
 
   span {
     position: relative;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
+    ${Font.HEAD_2}
   }
 
   span:before {
@@ -42,7 +42,7 @@ export const TopItemsColumn = styled.div`
     background-color: #fff;
     height: 2px;
     box-sizing: border-box;
-    width: 95px;
+    width: 6.25rem;
   }
 
   ul {
