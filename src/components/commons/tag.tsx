@@ -2,14 +2,14 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import Font from '../../constant/fontStyle';
 import Color from '../../constant/palette';
-
-type tagProps = {
+interface tagProps extends React.HTMLAttributes<HTMLDivElement> {
   label: string;
   color: string;
-};
-const Tag = ({ label, color }: tagProps) => {
+}
+
+const Tag = ({ label, color, ...rest }: tagProps) => {
   return (
-    <Wrapper color={color}>
+    <Wrapper color={color} {...rest}>
       <span>{label}</span>
     </Wrapper>
   );
@@ -35,6 +35,7 @@ const Wrapper = styled.div`
         break;
     }
   }}
+
   border-radius: 2.5rem;
   padding: 0.6rem 1rem;
   text-align: center;

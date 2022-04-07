@@ -31,9 +31,11 @@ const Filter = () => {
     <Container>
       <Sports />
       <Tags>
-        <span onClick={() => setIsShow(!isShow)}>
-          <Tag label={selectedMenu ? selectedMenu : '위치'} color={'black'} />
-        </span>
+        <Tag
+          label={selectedMenu ? selectedMenu : '위치'}
+          color={'black'}
+          onClick={() => setIsShow(!isShow)}
+        />
         <Tag label={'최신순'} color={'black'} />
         <Tag label={'인기순'} color={'black'} />
       </Tags>
