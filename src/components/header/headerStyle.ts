@@ -2,37 +2,41 @@ import styled from 'styled-components';
 import Font from '../../constant/fontStyle';
 import Color from '../../constant/palette';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-export const HeaderContainer = styled.header`
-  border-bottom: 1px solid ${Color.GRAY};
-`;
 
-export const FlexContainer = styled.div`
-  max-width: 1120px;
+export const HeaderContainer = styled.div`
+  max-width: 70rem;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 64px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 2.5rem;
 `;
 
-export const LoginButton = styled.button`
-  width: 100px;
-  height: 38px;
-  border: 1px solid ${Color.LIGHTGRAY};
-  border-radius: 40px;
+export const ButtonBox = styled.div`
+  display: flex;
+`;
+
+export const HeaderButton = styled.button`
+  border: none;
   color: ${Color.GRAY};
-  background-color: ${Color.WHITE};
-  ${Font.BODY_2}
+  background-color: transparent;
+  ${Font.SUBTITLE_2}
+  :hover {
+    color: ${Color.BLACK};
+  }
+  :first-child {
+    margin: 0 1.25rem;
+  }
 `;
 
 export const KakaoButton = styled.button`
   position: relative;
-  width: 300px;
-  height: 50px;
-  padding: 15px 20px;
+  width: 18.75rem;
+  height: 3.125rem;
+  padding: 1rem 1.25rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   color: ${Color.BROWN};
   background-color: ${Color.YELLOW};
   :hover {
@@ -47,5 +51,5 @@ export const KakaoButton = styled.button`
 export const CommentIcon = styled(FontAwesomeIcon)`
   position: absolute;
   left: 20px;
-  font-size: 20px;
+  font-size: 1.25rem;
 `;
