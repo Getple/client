@@ -43,7 +43,7 @@ export default Sports;
 const Container = styled.ul`
   display: flex;
   justify-content: center;
-
+  margin: 4.625rem 0 2.5rem;
   button {
     background-color: transparent;
     border: none;
@@ -52,8 +52,9 @@ const Container = styled.ul`
   }
   img {
     width: 3.5rem;
+    opacity: 50%;
   }
   .selected img {
-    opacity: 50%;
+    opacity: 100%;
   }
 `;
