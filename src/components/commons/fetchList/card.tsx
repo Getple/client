@@ -33,16 +33,10 @@ const Card = (props: CardProps) => {
         alt={`${props.card.event}_image`}
       />
       <Row>
-        <Tag
-          label={props.card.event as string}
-          color="black"
-          style={{ marginRight: '9px' }}
-        />
-        <Tag
-          label={props.card.region}
-          color="black"
-          style={{ marginRight: '1.5rem' }}
-        />
+        <Tag label={props.card.event} color="black" marginRight="0.5625rem" />
+
+        <Tag label={props.card.region} color="black" marginRight="1.5rem" />
+
         <Row>
           <FontAwesomeIcon
             icon={faHeart}
