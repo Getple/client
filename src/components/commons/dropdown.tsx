@@ -1,38 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
+import Font from '../../constant/fontStyle';
 import Color from '../../constant/palette';
 
-type SportsTypeParams = {
-  setSports: React.Dispatch<React.SetStateAction<string | undefined>>;
-};
-
-const SportsModal = ({ setSports }: SportsTypeParams) => {
-  const sportsTypes = [
-    '축구',
-    '풋살',
-    '야구',
-    '농구',
-    '탁구',
-    '배드민턴',
-    '테니스',
-  ];
+interface DropdownProps {
+  menuList: string[];
+  setSeletctedMenu: React.Dispatch<React.SetStateAction<string>>;
+}
+const Dropdown = ({ menuList, setSeletctedMenu }: DropdownProps) => {
   return (
-    <SportsList>
-      {sportsTypes.map((el) => (
-        <li key={el} onClick={() => setSports(el)}>
+    <Container>
+      {menuList.map((el) => (
+        <li
+          key={el}
+          onClick={() => {
+            setSeletctedMenu(el);
+          }}
+        >
           {el}
         </li>
       ))}
-    </SportsList>
+    </Container>
   );
 };
 
-const SportsList = styled.ul`
-  border: none;
+const Container = styled.ul`
+  ${Font.BODY_2}
+  width: max-content;
   border-radius: 8px;
   box-shadow: 0 0 6px 0 ${Color.LIGHTGRAY};
   padding: 0.25rem 0;
-  width: 15.6rem;
+  margin-top: 2px;
   background-color: ${Color.WHITE};
   li {
     padding: 0.5rem 1.5rem;
@@ -43,4 +41,4 @@ const SportsList = styled.ul`
     background-color: ${Color.HOVER};
   }
 `;
-export default SportsModal;
+export default Dropdown;

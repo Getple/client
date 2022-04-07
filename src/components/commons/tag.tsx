@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 import Font from '../../constant/fontStyle';
 import Color from '../../constant/palette';
-
 interface tagProps extends React.HTMLAttributes<HTMLDivElement> {
   label: string;
   color: string;
@@ -36,8 +35,9 @@ const Wrapper = styled.div`
       default:
         break;
     }
-  }};
-  border-radius: 1rem;
+  }}
+
+  border-radius: 2.5rem;
   padding: 0.6rem 1rem;
   text-align: center;
   align-items: center;
