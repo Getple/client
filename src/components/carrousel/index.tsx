@@ -16,17 +16,21 @@ interface CarrouselParams {
 }
 
 const Carrousel = (props: CarrouselParams) => {
-  const { goPrev, goNext, width, copyArray, handleDot, sliderRef } = useSlider({
-    array: props.array,
-  });
+  const { goPrev, goNext, width, addDataAtBothEnds, handleDot, sliderRef } =
+    useSlider({
+      array: props.array,
+    });
 
   return (
     <Wrapper>
       <Container>
         <CarrouselDirection onClick={goPrev} />
         <CardListWrapper>
-          <CardListContainer ref={sliderRef} size={width * copyArray.length}>
-            {copyArray.map((card) => (
+          <CardListContainer
+            ref={sliderRef}
+            size={width * addDataAtBothEnds.length}
+          >
+            {addDataAtBothEnds.map((card) => (
               <Card key={`$cardList_${card.id}`} card={card} />
             ))}
           </CardListContainer>

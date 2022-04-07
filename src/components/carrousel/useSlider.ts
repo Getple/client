@@ -7,18 +7,21 @@ interface UserSliderProps {
 }
 
 const useSlider = (props: UserSliderProps) => {
-  const copyArray = [...props.array];
-  const firstData = { ...copyArray[0], id: `first_${copyArray[0].id}` };
-  const lastData = {
-    ...copyArray[copyArray.length - 1],
-    id: `last_${copyArray[copyArray.length - 1].id}`,
+  const arrayLen = props.array.length;
+  const addDataAtBothEnds = [...props.array];
+  const firstData = {
+    ...addDataAtBothEnds[0],
+    id: `first_${addDataAtBothEnds[0].id}`,
   };
-  copyArray.unshift(lastData);
-  copyArray.push(firstData);
+  const lastData = {
+    ...addDataAtBothEnds[addDataAtBothEnds.length - 1],
+    id: `last_${addDataAtBothEnds[addDataAtBothEnds.length - 1].id}`,
+  };
+  addDataAtBothEnds.unshift(lastData);
+  addDataAtBothEnds.push(firstData);
 
   const sliderRef = useRef<HTMLDivElement>(null);
   const [idx, setIdx] = useState<number>(1);
-
   const [width, setWidth] = useState<number>(
     window.innerWidth >= 0 && window.innerWidth <= 425
       ? 250
@@ -26,8 +29,6 @@ const useSlider = (props: UserSliderProps) => {
       ? 450
       : 900,
   );
-
-  const arrayLen = props.array.length;
 
   useEffect(() => {
     const target = sliderRef.current;
@@ -72,7 +73,7 @@ const useSlider = (props: UserSliderProps) => {
     if (idx === 1) {
       setTimeout(() => {
         if (target) target.style.transitionDuration = '0ms';
-        setIdx(5);
+        setIdx(arrayLen);
       }, 500);
     }
     setIdx((prev) => prev - 1);
@@ -91,7 +92,7 @@ const useSlider = (props: UserSliderProps) => {
     goPrev,
     goNext,
     width,
-    copyArray,
+    addDataAtBothEnds,
     handleDot,
     sliderRef,
   };
