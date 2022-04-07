@@ -15,7 +15,7 @@ const MainPresenter = (props: MainPresenterParams) => {
   return (
     <Container>
       <Filter />
-      <Carrousel array={dummyData1} />
+      {/* <Carrousel array={dummyData1} /> */}
       {props.isShow && (
         <Modal
           handleBackground={props.handleBackground}

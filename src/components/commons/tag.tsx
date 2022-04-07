@@ -35,7 +35,7 @@ const Wrapper = styled.div`
         break;
     }
   }}
-  border-radius: 1rem;
+  border-radius: 2.5rem;
   padding: 0.6rem 1rem;
   text-align: center;
   align-items: center;
