@@ -14,7 +14,7 @@ const Footer = () => {
         <TopContainer>
           <Logo type="footer" />
           <TopItemsColumn>
-            <span>서비스 소개</span>
+            <span>About us</span>
             <ul>
               <li>
                 <a href="https://github.com/Getple/client">Repository</a>
