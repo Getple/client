@@ -1,7 +1,7 @@
 import { faUser, faUserTie } from '@fortawesome/free-solid-svg-icons';
 import Carrousel from '../../components/carrousel';
 import Modal from '../../components/loginModal';
-import Search from '../../components/search';
+import Filter from '../../components/filter';
 import { dummyData1 } from '../../components/carrousel/dummyData/dummyData1';
 import { AccountButton, CommentIcon, Container } from './mainStyle';
 
@@ -14,7 +14,7 @@ interface MainPresenterParams {
 const MainPresenter = (props: MainPresenterParams) => {
   return (
     <Container>
-      <Search />
+      <Filter />
       <Carrousel array={dummyData1} />
       {props.isShow && (
         <Modal
