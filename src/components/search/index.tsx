@@ -87,13 +87,14 @@ const Search = () => {
 
 export default Search;
 const Container = styled.div`
+  width: 80%;
+  margin: 8.5rem auto;
   display: flex;
   border: 1px solid ${Color.LIGHTGRAY};
   border-radius: 48px;
   justify-content: space-between;
   padding: 1rem 1.5rem;
   align-items: center;
-  font-size: ${Font.BODY_3};
 
   svg {
     font-size: 24px;
@@ -107,10 +108,14 @@ const Item = styled.div`
   cursor: pointer;
 
   p {
-    margin-bottom: 4px;
+
+    margin-bottom: 6px;
+    ${Font.HEAD_3}
+
   }
   span {
     color: ${Color.GRAY};
+    ${Font.BODY_1}
   }
   &:nth-of-type(2),
   &:nth-of-type(3) {

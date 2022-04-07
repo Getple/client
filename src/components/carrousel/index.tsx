@@ -1,7 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { addDataAtBothEnds, dotMarking } from './utils';
+import useSlider from './useSlider';
 import { FacilityInfo } from './type';
-import Color from '../../constant/palette';
 import CarrouselDirection from './carrouselDirection';
 import Card from './card';
 import {
@@ -18,100 +16,22 @@ interface CarrouselParams {
 }
 
 const Carrousel = (props: CarrouselParams) => {
-  const copyArray = addDataAtBothEnds(props.array);
-  const cardListRef = useRef<HTMLDivElement | null>(null);
-  let initialNum: number;
-  useEffect(() => {
-    initialNum = -900;
-    if (cardListRef.current) {
-      cardListRef.current.style.transform = `translateX(${initialNum}px)`;
-    }
-    const dotElem = document.getElementById(`dot_${1}`);
-    if (dotElem) {
-      dotElem.style.backgroundColor = `${Color.GRAY}`;
-    }
-  }, []);
-
-  const handleDirection = (isLeft: boolean, arr: FacilityInfo[]) => {
-    if (isLeft) {
-      if (cardListRef.current) {
-        if (initialNum === -900) {
-          cardListRef.current.style.transform = `translateX(${
-            initialNum + 900
-          }px)`;
-          setTimeout(() => {
-            initialNum -= arr.length * 900;
-            dotMarking(initialNum, arr);
-            if (cardListRef.current) {
-              cardListRef.current.style.transitionDuration = '0ms';
-              cardListRef.current.style.transform = `translateX(${initialNum}px)`;
-            }
-          }, 500);
-        }
-        initialNum += 900;
-        dotMarking(initialNum, arr);
-        cardListRef.current.style.transform = `translateX(${initialNum}px)`;
-        cardListRef.current.style.transitionDuration = '500ms';
-      }
-    } else {
-      if (cardListRef.current) {
-        if (initialNum === -900 * arr.length) {
-          cardListRef.current.style.transform = `translateX(${
-            initialNum - 900
-          }px)`;
-          setTimeout(() => {
-            initialNum += arr.length * 900;
-            dotMarking(initialNum, arr);
-            if (cardListRef.current) {
-              cardListRef.current.style.transitionDuration = '0ms';
-              cardListRef.current.style.transform = `translateX(${initialNum}px)`;
-            }
-          }, 500);
-        }
-        initialNum -= 900;
-        dotMarking(initialNum, arr);
-        cardListRef.current.style.transform = `translateX(${initialNum}px)`;
-        cardListRef.current.style.transitionDuration = '500ms';
-      }
-    }
-  };
-
-  const handleDot = (idx: number) => {
-    for (let i = 1; i <= props.array.length; i++) {
-      const elem = document.getElementById(`dot_${i}`);
-      if (i === idx && elem) {
-        initialNum = i * -900;
-        elem.style.backgroundColor = `${Color.GRAY}`;
-        if (cardListRef.current) {
-          cardListRef.current.style.transform = `translateX(${initialNum}px)`;
-          cardListRef.current.style.transitionDuration = '500ms';
-        }
-      } else if (i !== idx && elem) {
-        elem.style.backgroundColor = `${Color.LIGHTGRAY}`;
-      }
-    }
-  };
+  const { goPrev, goNext, width, copyArray, handleDot, sliderRef } = useSlider({
+    array: props.array,
+  });
 
   return (
     <Wrapper>
       <Container>
-        <CarrouselDirection
-          onClick={() => handleDirection(true, props.array)}
-        />
+        <CarrouselDirection onClick={goPrev} />
         <CardListWrapper>
-          <CardListContainer
-            ref={cardListRef}
-            width={(props.array.length + 2) * 900}
-          >
+          <CardListContainer ref={sliderRef} size={width * copyArray.length}>
             {copyArray.map((card) => (
               <Card key={`$cardList_${card.id}`} card={card} />
             ))}
           </CardListContainer>
         </CardListWrapper>
-        <CarrouselDirection
-          right
-          onClick={() => handleDirection(false, props.array)}
-        />
+        <CarrouselDirection right onClick={goNext} />
       </Container>
       <CarrouselDotList>
         {props.array.map((el, idx) => (

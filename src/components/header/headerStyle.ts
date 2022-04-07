@@ -23,6 +23,7 @@ export const LoginButton = styled.button`
   border-radius: 40px;
   color: ${Color.GRAY};
   background-color: ${Color.WHITE};
+  ${Font.BODY_2}
 `;
 
 export const KakaoButton = styled.button`

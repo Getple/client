@@ -2,10 +2,8 @@ import styled from 'styled-components';
 import Color from '../../../constant/palette';
 
 const Wrapper = styled.div`
-  width: 1120px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 const CarrouselDotList = styled.div`
@@ -26,16 +24,26 @@ const CarrouselDot = styled.div`
 
 const Container = styled.div`
   display: flex;
-  width: 1120px;
+  @media screen and (min-width: 0px) and (max-width: 425px) {
+    height: 250px;
+  }
   height: 440px;
   justify-content: center;
   align-items: center;
 `;
 
 const CardListWrapper = styled.div`
+  @media screen and (min-width: 0px) and (max-width: 425px) {
+    width: 250px;
+    height: 250px;
+  }
+  @media screen and (min-width: 425px) and (max-width: 1024px) {
+    width: 450px;
+  }
+  width: 900px;
   display: flex;
   align-items: center;
-  width: 900px;
+  border-radius: 8px;
   height: 440px;
   position: relative;
   overflow: hidden;
@@ -44,8 +52,8 @@ const CardListWrapper = styled.div`
 
 const CardListContainer = styled.div`
   display: flex;
-  width: ${(props: { width: number }) => props.width};
   height: 440px;
+  width: ${(props: { size: number }) => props.size};
 `;
 
 export {

@@ -2,11 +2,18 @@ import styled from 'styled-components';
 import Font from '../../../constant/fontStyle';
 import Color from '../../../constant/palette';
 const CardContainer = styled.div`
-  width: 900px;
   height: 440px;
   background-image: url(${(props: { image: string }) => props.image});
   background-position: center center;
   background-size: cover;
+  border-radius: 8px;
+  @media screen and (min-width: 0px) and (max-width: 425px) {
+    width: 250px;
+  }
+  @media screen and (min-width: 425px) and (max-width: 1024px) {
+    width: 450px;
+  }
+  width: 900px;
 `;
 
 const Info = styled.div`
@@ -20,6 +27,9 @@ const Info = styled.div`
   position: absolute;
   top: 270px;
   margin-left: 30px;
+  @media screen and (min-width: 0px) and (max-width: 425px) {
+    display: none;
+  }
 `;
 
 const InfoTop = styled.div`

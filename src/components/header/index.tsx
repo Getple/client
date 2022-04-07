@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Modal from '../modal';
+import Modal from '../loginModal';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
 import {
   FlexContainer,
