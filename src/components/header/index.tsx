@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Modal from '../loginModal';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
 import {
-  FlexContainer,
   HeaderContainer,
-  LoginButton,
+  ButtonBox,
+  HeaderButton,
   KakaoButton,
   CommentIcon,
 } from './headerStyle';
@@ -24,11 +24,14 @@ const Header = () => {
   };
 
   return (
-    <HeaderContainer>
-      <FlexContainer>
+    <>
+      <HeaderContainer>
         <Logo type="header" />
-        <LoginButton onClick={handleModal}>로그인</LoginButton>
-      </FlexContainer>
+        <ButtonBox>
+          <HeaderButton onClick={handleModal}>모임 만들기</HeaderButton>
+          <HeaderButton onClick={handleModal}>로그인</HeaderButton>
+        </ButtonBox>
+      </HeaderContainer>
       {isShow && (
         <Modal
           handleBackground={handleBackground}
@@ -43,7 +46,6 @@ const Header = () => {
               <span>카카오 로그인</span>
             </KakaoButton>
           </a>
-
           {/* <AccountButton>
                 <CommentIcon icon={faUser} />
                 <span>사용자 계정</span>
@@ -56,7 +58,7 @@ const Header = () => {
               <Message>이제부터 GETPLE과 함께 하세요</Message> */}
         </Modal>
       )}
-    </HeaderContainer>
+    </>
   );
 };
 
