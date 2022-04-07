@@ -3,7 +3,11 @@ import styled, { css } from 'styled-components';
 import Font from '../../constant/fontStyle';
 import Color from '../../constant/palette';
 
-const Tag = ({ label, color }: { label: string; color: string }) => {
+type tagProps = {
+  label: string;
+  color: string;
+};
+const Tag = ({ label, color }: tagProps) => {
   return (
     <Wrapper color={color}>
       <span>{label}</span>
