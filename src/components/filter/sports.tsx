@@ -52,7 +52,11 @@ const Container = styled.ul`
   }
   img {
     width: 3.5rem;
-    opacity: 50%;
+    opacity: 55%;
+    transition: all 200ms ease-in;
+  }
+  img:hover {
+    opacity: 100;
   }
   .selected img {
     opacity: 100%;
