@@ -20,6 +20,13 @@ interface PostFormProps {
     location: boolean;
   };
   handleDropdown: (type: string) => void;
+  titleRef: React.RefObject<HTMLInputElement>;
+  countRef: React.RefObject<HTMLInputElement>;
+  phoneRef: React.RefObject<HTMLInputElement>;
+  sportRef: React.RefObject<HTMLInputElement>;
+  locationRef: React.RefObject<HTMLInputElement>;
+  contentRef: React.RefObject<HTMLTextAreaElement>;
+  handleSubmit: () => void;
 }
 
 const PostFormPresenter = (props: PostFormProps): JSX.Element => {
@@ -30,6 +37,13 @@ const PostFormPresenter = (props: PostFormProps): JSX.Element => {
     setSeletctedLocation,
     isShow,
     handleDropdown,
+    titleRef,
+    countRef,
+    phoneRef,
+    sportRef,
+    locationRef,
+    contentRef,
+    handleSubmit,
   } = props;
   const SPORTS = [
     '축구',
@@ -65,13 +79,14 @@ const PostFormPresenter = (props: PostFormProps): JSX.Element => {
       <Container>
         <Title>새 글 쓰기</Title>
         <Label>제목</Label>
-        <Input />
+        <Input ref={titleRef} />
         <Label>모집 인원</Label>
-        <Input />
+        <Input ref={countRef} />
         <Label>전화번호</Label>
-        <Input />
+        <Input ref={phoneRef} />
         <Label>종목 선택</Label>
         <SelectBox
+          ref={sportRef}
           onClick={() => handleDropdown('sport')}
           placeholder="종목을 선택해주세요."
           defaultValue={selectedSport && selectedSport}
@@ -81,6 +96,7 @@ const PostFormPresenter = (props: PostFormProps): JSX.Element => {
         )}
         <Label>모집 지역</Label>
         <SelectBox
+          ref={locationRef}
           onClick={() => handleDropdown('location')}
           placeholder="종목을 선택해주세요."
           defaultValue={selectedLocation && selectedLocation}
@@ -92,8 +108,11 @@ const PostFormPresenter = (props: PostFormProps): JSX.Element => {
           />
         )}
         <Label>모집 내용</Label>
-        <Textarea placeholder="모집에 대한 내용을 입력해주세요"></Textarea>
-        <SubmitButton>등록하기</SubmitButton>
+        <Textarea
+          placeholder="모집에 대한 내용을 입력해주세요"
+          ref={contentRef}
+        />
+        <SubmitButton onClick={handleSubmit}>등록하기</SubmitButton>
       </Container>
     </ContainerWrapper>
   );
