@@ -4,7 +4,7 @@ import Color from '../../constant/palette';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const HeaderContainer = styled.div`
-  max-width: 70rem;
+  width: 100%;
   height: 4rem;
   display: flex;
   justify-content: space-between;

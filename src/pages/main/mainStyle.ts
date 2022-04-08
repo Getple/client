@@ -4,8 +4,8 @@ import Font from '../../constant/fontStyle';
 import Color from '../../constant/palette';
 
 const Container = styled.div`
-  max-width: 1120px;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;

@@ -3,18 +3,28 @@ import Footer from './components/footer';
 import Header from './components/header';
 import Kakao from './pages/kakao';
 import Main from './pages/main';
+import styled from 'styled-components';
 
 function App(): JSX.Element {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/auth/kakao" element={<Kakao />} />
-      </Routes>
+      <ContaienrWrapper>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/auth/kakao" element={<Kakao />} />
+        </Routes>
+      </ContaienrWrapper>
       <Footer />
     </BrowserRouter>
   );
 }
+
+const ContaienrWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 70rem;
+  margin: auto;
+`;
 
 export default App;
