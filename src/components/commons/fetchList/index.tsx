@@ -29,8 +29,8 @@ const FetchList = (props: FetchListProps): JSX.Element => {
 const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, max-content));
-  grid-gap: 16px;
-  padding: 20px;
+  grid-gap: 0.625rem;
+  padding: 1.25rem;
   justify-content: center;
 `;
 

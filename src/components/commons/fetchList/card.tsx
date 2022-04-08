@@ -33,9 +33,9 @@ const Card = (props: CardProps) => {
         src={matchingImage(props.card.event)}
         alt={`${props.card.event}_image`}
       />
-      <Row>
-        <Tag label={props.card.event} color="black" marginRight="0.5rem" />
-        <Tag label={props.card.region} color="black" marginRight="1.5rem" />
+      <BottomBox>
+        <Tag label={props.card.event} color="black" />
+        <Tag label={props.card.region} color="black" />
         <Row>
           <FontAwesomeIcon
             icon={faHeart}
@@ -48,7 +48,7 @@ const Card = (props: CardProps) => {
           />
           <Like>10</Like>
         </Row>
-      </Row>
+      </BottomBox>
     </Container>
   );
 };
@@ -62,7 +62,7 @@ const Container = styled.div`
   align-items: center;
   border-radius: 8px;
   box-shadow: 1px 0px 10px 1px lightgray;
-  margin: 0.5rem;
+  margin: 0.375rem 0.5rem;
   background-color: ${Color.WHITE};
   cursor: pointer;
   :hover {
@@ -84,9 +84,15 @@ const EventImage = styled.img`
   margin-bottom: 1.875rem;
 `;
 
-const Row = styled.div`
+const BottomBox = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  width: 100%;
+`;
+
+const Row = styled.div`
+  display: flex;
 `;
 
 const Like = styled.p`
