@@ -4,6 +4,7 @@ import Header from './components/header';
 import Kakao from './pages/kakao';
 import styled from 'styled-components';
 import Main from './pages/main';
+import PostForm from './pages/postForm';
 
 function App(): JSX.Element {
   return (
@@ -13,6 +14,7 @@ function App(): JSX.Element {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/auth/kakao" element={<Kakao />} />
+          <Route path="/postForm" element={<PostForm />} />
         </Routes>
       </ContaienrWrapper>
       <Footer />
