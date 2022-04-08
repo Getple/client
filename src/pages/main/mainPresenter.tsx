@@ -7,13 +7,13 @@ import dummyData1 from '../../components/commons/fetchList/dummyData/dummyData1'
 import { AccountButton, CommentIcon, Container } from './mainStyle';
 import FetchList from '../../components/commons/fetchList';
 
-interface MainPresenterParams {
+interface MainPresenterProps {
   isShow: boolean;
   handleBackground: (e: React.MouseEvent<HTMLElement>) => void;
   handleModal: () => void;
 }
 
-const MainPresenter = (props: MainPresenterParams) => {
+const MainPresenter = (props: MainPresenterProps) => {
   return (
     <Container>
       <Filter />

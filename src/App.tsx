@@ -2,8 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/footer';
 import Header from './components/header';
 import Kakao from './pages/kakao';
-import Main from './pages/main';
 import styled from 'styled-components';
+import Main from './pages/main';
 
 function App(): JSX.Element {
   return (
