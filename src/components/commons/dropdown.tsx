@@ -25,6 +25,8 @@ const Dropdown = ({ menuList, setSeletctedMenu }: DropdownProps) => {
 };
 
 const Container = styled.ul`
+  position: absolute;
+  z-index: 10;
   ${Font.BODY_2}
   width: max-content;
   border-radius: 8px;
