@@ -28,7 +28,7 @@ const Wrapper = styled.div`
         `;
       case 'lightGray':
         return css`
-          color: ${Color.LIGHTGRAY};
+          color: ${Color.GRAY};
           border: 1px solid ${Color.LIGHTGRAY};
         `;
 
