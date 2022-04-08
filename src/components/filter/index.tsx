@@ -6,6 +6,7 @@ import Sports from './sports';
 const Filter = () => {
   const [isShow, setIsShow] = useState(false);
   const [selectedMenu, setSeletctedMenu] = useState<string>('');
+  const [sortBy, setSortBy] = useState('newest');
   const LOCATION = [
     '서울특별시',
     '부산광역시',
@@ -24,9 +25,11 @@ const Filter = () => {
     '경상북도',
     '경상남도',
   ];
+
   useEffect(() => {
     setIsShow(!isShow);
   }, [selectedMenu]);
+
   return (
     <Container>
       <Sports />
@@ -36,8 +39,16 @@ const Filter = () => {
           color={'black'}
           onClick={() => setIsShow(!isShow)}
         />
-        <Tag label={'최신순'} color={'black'} />
-        <Tag label={'인기순'} color={'black'} />
+        <Tag
+          label={'최신순'}
+          color={sortBy === 'newest' ? 'black' : 'lightGray'}
+          onClick={() => setSortBy('newest')}
+        />
+        <Tag
+          label={'인기순'}
+          color={sortBy === 'popularity' ? 'black' : 'lightGray'}
+          onClick={() => setSortBy('popularity')}
+        />
       </Tags>
       <DropdownWrapper>
         {isShow && (
