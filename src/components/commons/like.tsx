@@ -5,14 +5,14 @@ import styled from 'styled-components';
 import Color from '../../constant/palette';
 
 interface LikeProps {
-  isliked: boolean;
+  $isliked: boolean;
 }
 
-const Like = ({ isliked }: LikeProps) => {
-  return <LikeIcon icon={faHeart} isliked={isliked} />;
+const Like = ({ $isliked }: LikeProps) => {
+  return <LikeIcon icon={faHeart} $isliked={$isliked} />;
 };
 
 const LikeIcon = styled(FontAwesomeIcon)<LikeProps>`
-  color: ${(isLike) => (isLike ? Color.RED : Color.LIGHTGRAY)};
+  color: ${(props) => (props.$isliked ? Color.RED : Color.LIGHTGRAY)};
 `;
 export default Like;
