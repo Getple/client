@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { PostType } from '.';
 import Font from '../../../constant/fontStyle';
+import Color from '../../../constant/palette';
 import Tag from '../tag';
 
 interface CardProps {
@@ -33,17 +34,15 @@ const Card = (props: CardProps) => {
         alt={`${props.card.event}_image`}
       />
       <Row>
-        <Tag label={props.card.event} color="black" marginRight="0.5625rem" />
-
+        <Tag label={props.card.event} color="black" marginRight="0.5rem" />
         <Tag label={props.card.region} color="black" marginRight="1.5rem" />
-
         <Row>
           <FontAwesomeIcon
             icon={faHeart}
             style={{
               width: '1.25rem',
               height: '1,25rem',
-              marginRight: '0.625rem',
+              marginRight: '0.5rem',
               color: 'red',
             }}
           />
@@ -55,16 +54,21 @@ const Card = (props: CardProps) => {
 };
 
 const Container = styled.div`
-  width: 16.125rem;
-  height: 16.375rem;
+  width: 16rem;
+  height: 16rem;
   padding: 1.875rem 1.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 6.9px;
+  border-radius: 8px;
   box-shadow: 1px 0px 10px 1px lightgray;
-  margin: 0 auto;
-  margin-bottom: 1.875rem;
+  margin: 0.5rem;
+  background-color: ${Color.WHITE};
+  cursor: pointer;
+  :hover {
+    transform: scale(1.02);
+    transition: all 0.2s linear;
+  }
 `;
 
 const Title = styled.h2`

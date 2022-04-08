@@ -18,20 +18,20 @@ interface FetchListProps {
 
 const FetchList = (props: FetchListProps): JSX.Element => {
   return (
-    <Container>
+    <List>
       {props.array.map((post) => (
         <Card key={post.id} card={post} />
       ))}
-    </Container>
+    </List>
   );
 };
 
-const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
+const List = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, max-content));
+  grid-gap: 16px;
+  padding: 20px;
   justify-content: center;
-  float: left;
 `;
 
 export default FetchList;
