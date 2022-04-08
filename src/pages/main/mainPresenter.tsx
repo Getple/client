@@ -2,8 +2,10 @@ import { faUser, faUserTie } from '@fortawesome/free-solid-svg-icons';
 import Carrousel from '../../components/carrousel';
 import Modal from '../../components/loginModal';
 import Filter from '../../components/filter';
-import { dummyData1 } from '../../components/carrousel/dummyData/dummyData1';
+//import { dummyData1 } from '../../components/carrousel/dummyData/dummyData1';
+import dummyData1 from '../../components/commons/fetchList/dummyData/dummyData1';
 import { AccountButton, CommentIcon, Container } from './mainStyle';
+import FetchList from '../../components/commons/fetchList';
 
 interface MainPresenterParams {
   isShow: boolean;
@@ -15,6 +17,7 @@ const MainPresenter = (props: MainPresenterParams) => {
   return (
     <Container>
       <Filter />
+      <FetchList array={dummyData1} />
       {/* <Carrousel array={dummyData1} /> */}
       {props.isShow && (
         <Modal
