@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Like from '../../components/commons/like';
 import Tag from '../../components/commons/tag';
 import {
@@ -16,10 +16,21 @@ import {
 
 interface DetailProps {
   onKeyDown: React.KeyboardEventHandler<HTMLInputElement>;
+  comment?: { user: string; content: string }[];
   inputRef: React.RefObject<HTMLInputElement>;
+  isAuthor: boolean;
+  editPost: () => void;
+  deletePost: () => void;
 }
 
-const DetailPresenter = ({ onKeyDown, inputRef }: DetailProps) => {
+const DetailPresenter = ({
+  onKeyDown,
+  comment,
+  inputRef,
+  isAuthor,
+  editPost,
+  deletePost,
+}: DetailProps) => {
   return (
     <Container>
       <Title>같이 운동하실 분 구함</Title>
@@ -39,6 +50,12 @@ const DetailPresenter = ({ onKeyDown, inputRef }: DetailProps) => {
           동네축구부 회원님 모집합니다. 동네는 서울시 노원구 어쩌고 저쩌고
           주말에 만나서 공차실 분 연락주세여
         </Desc>
+        {isAuthor && (
+          <Tags className="edit">
+            <Tag label="수정하기" color="lightGray" onClick={editPost} />
+            <Tag label="삭제하기" color="lightGray" onClick={deletePost} />
+          </Tags>
+        )}
       </Contents>
       <OtherInfo>
         <h2>모집 인원</h2>
@@ -52,26 +69,12 @@ const DetailPresenter = ({ onKeyDown, inputRef }: DetailProps) => {
           onKeyDown={(e) => onKeyDown(e)}
           ref={inputRef}
         />
-        <Comment>
+        <Comment key={Date.now()}>
           <div>
             <img src="/assets/pingpong.png" alt="테스트이미지" />
-            <p>이지수</p>
+            <p>작성자</p>
           </div>
-          <p>내용어쩌고~~~~~~~~~~~</p>
-        </Comment>
-        <Comment>
-          <div>
-            <img src="/assets/pingpong.png" alt="테스트이미지" />
-            <p>이지수</p>
-          </div>
-          <p>내용어쩌고~~~~~~~~~~~</p>
-        </Comment>
-        <Comment>
-          <div>
-            <img src="/assets/pingpong.png" alt="테스트이미지" />
-            <p>이지수</p>
-          </div>
-          <p>내용어쩌고~~~~~~~~~~~</p>
+          <p>내용입니다~ 내용입니다~</p>
         </Comment>
       </CommentSection>
     </Container>

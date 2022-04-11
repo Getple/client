@@ -9,7 +9,9 @@ export const Container = styled.div`
 export const Title = styled.h1`
   ${Font.HEAD_1}
 `;
-export const Contents = styled.div``;
+export const Contents = styled.div`
+  margin-bottom: 2.5rem;
+`;
 
 export const Info = styled.div`
   margin: 2.8rem 0;
@@ -21,8 +23,11 @@ export const Info = styled.div`
 export const Tags = styled.div`
   display: flex;
   height: min-content;
-  div {
+  div:first-of-type {
     margin-right: 1.25rem;
+  }
+  &.edit {
+    justify-content: flex-end;
   }
 `;
 
@@ -38,10 +43,10 @@ export const LikeWrapper = styled.div`
   }
 `;
 export const Desc = styled.p`
-  ${Font.BODY_1}
-  margin-bottom: 2.5rem;
+  ${Font.BODY_1}/* margin-bottom: 2.5rem; */
 `;
 
+export const Edit = styled.div``;
 export const OtherInfo = styled.section`
   padding: 1.25rem 0;
   border-top: 1px solid ${Color.LIGHTGRAY};
