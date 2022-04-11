@@ -47,4 +47,6 @@ const Wrapper = styled.div`
   }
   margin-right: ${({ wrapperMargin }: { wrapperMargin: string }) =>
     wrapperMargin};
+
+  cursor: ${({ onClick }) => (onClick ? 'pointer' : 'default')};
 `;

@@ -20,6 +20,12 @@ interface DetailProps {
 }
 
 const DetailPresenter = ({ onKeyDown, inputRef }: DetailProps) => {
+  const editPost = () => {
+    //글수정
+  };
+  const deletePost = () => {
+    //글삭제
+  };
   return (
     <Container>
       <Title>같이 운동하실 분 구함</Title>
@@ -39,6 +45,10 @@ const DetailPresenter = ({ onKeyDown, inputRef }: DetailProps) => {
           동네축구부 회원님 모집합니다. 동네는 서울시 노원구 어쩌고 저쩌고
           주말에 만나서 공차실 분 연락주세여
         </Desc>
+        <Tags className="edit">
+          <Tag label="수정하기" color="lightGray" onClick={editPost} />
+          <Tag label="삭제하기" color="lightGray" onClick={deletePost} />
+        </Tags>
       </Contents>
       <OtherInfo>
         <h2>모집 인원</h2>
