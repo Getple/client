@@ -6,6 +6,8 @@ import Filter from '../../components/filter';
 import dummyData1 from '../../components/commons/fetchList/dummyData/dummyData1';
 import { AccountButton, CommentIcon, Container } from './mainStyle';
 import FetchList from '../../components/commons/fetchList';
+import { gql, useQuery } from '@apollo/client';
+import { useEffect } from 'react';
 
 interface MainPresenterProps {
   isShow: boolean;
@@ -14,6 +16,15 @@ interface MainPresenterProps {
 }
 
 const MainPresenter = (props: MainPresenterProps) => {
+  const GET_CURRENT_USER = gql`
+    query GetUserToken {
+      token
+    }
+  `;
+
+  const currentUser = useQuery<any>(GET_CURRENT_USER);
+  console.log(currentUser);
+
   return (
     <Container>
       <Filter />
